@@ -15,6 +15,24 @@ react-redux-app
     ES6 stateless component (best way)
     => container & presentation components
 
-- explore Redux:
-  
+- explore Redux: when we need Redux ?
+  complex data flow
+  inter component communication
+  non-hierarchical data
+  many actions
 
+- explore Redux: 3 principals
+  one immutable store
+  action trigger changes
+  reducers update state
+
+  Action => Store ( Store <=> Reducers ) => React: back to Action
+  Redux: store & change logic are seperated, one store & hierarchical reducers, no dispatcher
+
+- Action + Store + Reducer
+  consider about immutable.js
+
+- Connecting React to redux
+  Action, Store, Immutability, Reducers
+
+-
