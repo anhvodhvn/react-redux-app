@@ -1,1 +1,1 @@
-﻿react-advance-sample
+﻿react-redux-app
