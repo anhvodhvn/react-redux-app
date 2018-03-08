@@ -1,4 +1,4 @@
-﻿react-advance-sample
+react-redux-app
 
 - setup dev environment:
     babel
@@ -16,4 +16,5 @@
     => container & presentation components
 
 - explore Redux:
-  -
+  
+
