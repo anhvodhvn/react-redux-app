@@ -30,7 +30,7 @@ react-redux-app
   Redux: store & change logic are seperated, one store & hierarchical reducers, no dispatcher
 
 - Action + Store + Reducer
-  consider about immutable.js
+  3rd immutable.js
 
 - Connecting React to redux
   Action, Store, Immutability, Reducers
