@@ -30,7 +30,10 @@ react-redux-app
   Redux: store & change logic are seperated, one store & hierarchical reducers, no dispatcher
 
 - Action + Store + Reducer
-  3rd immutable.js
+  Actions: represent user intent, must have type
+  Store: dispatch, subscribe, getState
+  Immutability: just return a new copy & 3rd Immutable.js
+  Reducers: must be pure, multiple per app, slice of state
 
 - Connecting React to redux
   Action, Store, Immutability, Reducers
