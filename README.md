@@ -42,3 +42,9 @@ react-redux-app
     Connect:
       mapStateToProps
       mapDispatchToProps
+
+- Redux Flow:
+  Action
+  Store
+  Reducer
+  Container Component
