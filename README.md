@@ -37,5 +37,8 @@ react-redux-app
 
 - Connecting React to redux
   Action, Store, Immutability, Reducers
-
--
+  React-Redux:
+    Provider:
+    Connect:
+      mapStateToProps
+      mapDispatchToProps
