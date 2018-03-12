@@ -48,3 +48,10 @@ react-redux-app
   Store
   Reducer
   Container Component
+
+- Async in Redux:
+  redux-thunk
+  redux-promise
+  redux-saga
+
+
