@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as courseActions from '../../actions/courseActions';
 
+
 /* container components */
 class CoursePageSample extends React.Component {
     constructor(props, context){
