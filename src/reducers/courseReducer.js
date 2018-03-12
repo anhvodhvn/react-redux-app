@@ -7,6 +7,8 @@ export default function(state = [], action){
       return [...state, Object.assign({}, action.course)];
     case CONSTANSTS.EDIT_COURSE:
       return true;
+    case CONSTANSTS.LOAD_COURSE_SUCCESS:
+      return action.courses;
     default:
       return state;
   }

@@ -32,8 +32,7 @@ CoursePage.propTypes = {
 
 
 /* redux connect related functions */
-function mapStateToProps(state, ownProps){
-  //debugger;
+function mapStateToProps(state, ownProps){  
   return {
     courses: state.courses
   };
