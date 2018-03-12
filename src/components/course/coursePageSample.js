@@ -44,7 +44,7 @@ class CoursePageSample extends React.Component {
             </div>
         );
     }
-};
+}
 
 
 /* provider proptypes validation */
