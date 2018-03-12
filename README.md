@@ -48,3 +48,11 @@ react-redux-app
   Store
   Reducer
   Container Component
+
+- Async in Redux:
+  redux-thunk   : return functions from actin creators
+  redux-promise : flux standard actions and promises
+  redux-saga    : use ES6 generators and rich domain-specific language
+
+
+
