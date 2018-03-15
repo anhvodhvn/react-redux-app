@@ -4,12 +4,12 @@ import { bindActionCreators } from 'redux';
 import * as courseActions from '../../actions/courseActions';
 
 /* container components */
-class CoursePage extends React.Component {
+class CoursePageSample extends React.Component {
     constructor(props, context){
       super(props, context);
 
       this.state = {
-        course: { title: '' }
+        course: { title: ' Sample' }
       };
 
       this.onChangeTitle = this.onChangeTitle.bind(this);
@@ -36,7 +36,7 @@ class CoursePage extends React.Component {
         //debugger;
         return (
             <div>
-                <h1>Course Page</h1>
+                <h1>Course Page Sample</h1>
                 {this.props.courses.map(this.courseRows)}
                 <h2>Add Course </h2>
                 <input name="Title" type="text" onChange={this.onChangeTitle} value={this.state.course.title} />
@@ -48,7 +48,7 @@ class CoursePage extends React.Component {
 
 
 /* provider proptypes validation */
-CoursePage.propTypes = {
+CoursePageSample.propTypes = {
   courses: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 };
@@ -70,4 +70,4 @@ function mapDispatchToProps(dispatch){
 
 //const connectStateAndProps = connect(mapStateToProps, mapDispatchToProps);
 //export default connectStateAndProps(CoursePage);
-export default connect(mapStateToProps, mapDispatchToProps)(CoursePage);
+export default connect(mapStateToProps, mapDispatchToProps)(CoursePageSample);
