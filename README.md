@@ -53,3 +53,11 @@ react-redux-app
   redux-thunk   : return functions from actin creators
   redux-promise : flux standard actions and promises
   redux-saga    : use ES6 generators and rich domain-specific language
+
+- Async Writes in Redux:
+  create Manage Course Page
+  create Reusable Form Input
+  populate Form via:
+    mapStateToProps
+    componentWillReceiveProps
+
