@@ -12,12 +12,38 @@ class ManageCoursePage extends React.Component {
             course: Object.assign({}, this.props.course),
             errors: {}
         };
+
+        this.updateCourseState = this.updateCourseState.bind(this);
+        this.saveCourse = this.saveCourse.bind(this);
+    }
+
+    /* this function life cycle will be called anytime when props have changed */
+    componentWillReceiveProps(nextProps){
+        if(this.props.course.id != nextProps.course.id){
+            // need to populate form when existing course is loaded directly
+            this.setState({course: Object.assign({}, nextProps.course)});
+        }
+    }
+
+    updateCourseState(event) {
+        const field = event.target.name;
+        let course = this.state.course;
+        course[field] = event.target.value;
+        return this.setState({course: course});
+    }
+
+    saveCourse(event) {
+        event.preventDefault();
+        this.props.actions.saveCourse(this.state.course);
+        this.context.router.push('/courses');
     }
 
     render() {
         return (
             <CourseForm 
                 allAuthors={this.props.authors}
+                onChange={this.updateCourseState}
+                onSave={this.saveCourse}
                 course={this.state.course}
                 errors={this.state.errors}
             />
@@ -27,12 +53,29 @@ class ManageCoursePage extends React.Component {
 
 ManageCoursePage.propTypes = {
     course: PropTypes.object.isRequired,
-    authors: PropTypes.array.isRequired
+    authors: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
 };
 
+ManageCoursePage.contextTypes = {
+    router: PropTypes.object
+};
+
+function getCourseById(courses, id){
+    let course = courses.filter(course => course.id == id);
+    if(course) return course[0];
+    else return null;
+}
+
 function mapStateToProps(state, ownProps){
+    let courseId = ownProps.params.id;
+
     let course = { id:'', watchHref: '', title: '', authorId: '', length: '', category: ''};
-    //debugger;
+
+    if(courseId && state.courses.length>0){
+        course = getCourseById(state.courses, courseId);
+    }
+
     let formatDisplayNameAuthor = state.authors.map(author => {
         return {
             value: author.id,
