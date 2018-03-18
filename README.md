@@ -61,5 +61,11 @@ react-redux-app
     mapStateToProps
     componentWillReceiveProps
 
-- Handling Async Status
+- Handling Async Status and Errors
+these issues:
+  No initial loading indicator
+  No feedback upon clicking save
+  API fails silently
+
+
   
