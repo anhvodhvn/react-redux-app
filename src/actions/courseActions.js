@@ -11,7 +11,7 @@ export function updateCourse(course) {
 }
 
 export function loadCourseSuccess(courses){
-  return { type: CONSTANSTS.LOAD_COURSE_SUCCESS, courses };
+  return { type: CONSTANSTS.LOAD_COURSES_SUCCESS, courses };
 }
 
 export function loadCourses(){
