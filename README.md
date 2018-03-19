@@ -56,8 +56,16 @@ react-redux-app
 
 - Async Writes in Redux:
   create Manage Course Page
-  create Reusable Form Input
+  create reusable Form Input by Bootstrap
   populate Form via:
     mapStateToProps
     componentWillReceiveProps
 
+- Handling Async Status and Errors
+these issues:
+  No initial loading indicator
+  No feedback upon clicking save
+  API fails silently
+
+
+  
