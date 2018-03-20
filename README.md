@@ -66,7 +66,5 @@ these issues:
   No initial loading indicator
   No feedback upon clicking save
   API fails silently
-  cool test new account (con)
-
 
   

@@ -12,11 +12,18 @@ class LoadingDot extends React.Component {
     }
 
     componentDidMount(){
-            this.interval = setInterval(() => {                
+        this.interval = setInterval(() => {
+            if(this.props.loading){
                 this.setState({ // eslint-disable-line react/no-did-mount-set-state
                     frame: this.state.frame + 1
                 });
-            }, this.props.interval);
+            }
+            else{
+                this.setState({
+                    frame: 0
+                });
+            }
+        }, this.props.interval);
     }
 
     render(){
@@ -32,12 +39,14 @@ class LoadingDot extends React.Component {
 
 LoadingDot.defaultProps = {
     interval: 300,
-    dots: 5
+    dots: 5,
+    loading: false
 };
 
 LoadingDot.propTypes = {
     interval: PropTypes.number,
-    dots: PropTypes.number
+    dots: PropTypes.number,
+    loading: PropTypes.bool
 };
 
 export default LoadingDot;
