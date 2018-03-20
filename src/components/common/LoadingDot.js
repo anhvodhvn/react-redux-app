@@ -12,13 +12,11 @@ class LoadingDot extends React.Component {
     }
 
     componentDidMount(){
-        this.onMount(() => {
-            this.interval = setInterval(() => {
+            this.interval = setInterval(() => {                
                 this.setState({ // eslint-disable-line react/no-did-mount-set-state
                     frame: this.state.frame + 1
                 });
             }, this.props.interval);
-        });
     }
 
     render(){
