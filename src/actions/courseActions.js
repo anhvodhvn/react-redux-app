@@ -1,6 +1,6 @@
 import * as CONSTANSTS from '../lib/constants';
 import courseApi from '../services/mockCourse';
-import {beginAjaxCall} from './ajaxStatusActions';
+import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 export function createCourseSuccess(course) {
   return { type: CONSTANSTS.CREATE_COURSE_SUCCESS, course };
@@ -36,6 +36,7 @@ export function saveCourse(course){
         dispatch(createCourseSuccess(saveCourse));
     })
     .catch(error => {
+      dispatch(ajaxCallError(error));
       throw error;
     });
   };
