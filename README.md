@@ -65,6 +65,6 @@ react-redux-app
 these issues:
   No initial loading indicator
   No feedback upon clicking save
-  APIs fail silently: mac  pro
+  APIs fail silently: mac book pro 2017
 
   
