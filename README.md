@@ -58,14 +58,16 @@ react-redux-app
   create Manage Course Page
   create reusable Form Input by Bootstrap
   populate Form via:
-    mapStateToProps
-    componentWillReceiveProps
+      mapStateToProps
+      componentWillReceiveProps
 
 - Handling Async Status and Errors
 these issues:
   No initial loading indicator
   No feedback upon clicking save
   API fails silently
+    displaying & tracking async status
+    handling errors
 
-
+- Testing React & Redux
   
