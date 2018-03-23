@@ -69,5 +69,15 @@ these issues:
     displaying & tracking async status
     handling errors
 
-- Testing React & Redux
+- Testing React:
+  testing frameworks  : mocha, jasmine, jest, tape, ava
+  assertion libraries
+  helper libraries    : react test utils, enzyme
   
+  Testing Approach:
+    Mocha, Expect, React Test Utils, Enzyme
+    In-Memory DOM via Node
+  Tested
+    react presentation components
+
+- Testing Redux:
