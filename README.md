@@ -70,4 +70,14 @@ these issues:
     handling errors
 
 - Testing React & Redux
+  testing connected components:
+    test markup
+    test behavior
+  testing redux:
+    action creators
+    thunks
+    reducers
+    store
+
+
   
