@@ -73,6 +73,8 @@ these issues:
   testing connected components:
     test markup
     test behavior
+  testing mapStateToProps via extraction
+    
   testing redux:
     action creators
     thunks
