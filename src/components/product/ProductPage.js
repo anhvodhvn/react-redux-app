@@ -14,19 +14,19 @@ class ProductPage extends React.Component {
     }
 
     redirectToAddProductPage() {
-
+        browserHistory.push('/product');
     }
 
     render() {
         const {products} = this.props;
-        
+
         return (
             <div>
                 <h1>Products</h1>
                 <input  type="submit"
                         value="Add Product" 
                         className="btn btn-primary"
-                        onClick={this.redirectToAddCoursePage} />
+                        onClick={this.redirectToAddProductPage} />
                 <ProductList products={products}/>
             </div>
         );

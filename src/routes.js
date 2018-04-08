@@ -4,11 +4,13 @@ import App from './components/App';
 
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
-import CoursePage from './components/course/CoursePage';
-import ProductPage from './components/product/ProductPage';
 
-import CoursePageSample from './components/course/CoursePageSample';
+import CoursePage from './components/course/CoursePage';
 import ManageCoursePage from './components/course/ManageCoursePage';
+//import CoursePageSample from './components/course/CoursePageSample';
+
+import ProductPage from './components/product/ProductPage';
+import ManageProductPage from './components/product/ManageProductPage';
 
 export default (
   <Route path="/" component={App}>
@@ -17,7 +19,9 @@ export default (
     <Route path="course" component={ManageCoursePage}/>
     <Route path="course/:id" component={ManageCoursePage}/>
     <Route path="products" component={ProductPage}/>
+    <Route path="product" component={ManageProductPage} />
+    <Route path="product/:id" component={ManageProductPage} />
     <Route path="about" component={AboutPage}/>
-    <Route path="sample" component={CoursePageSample}/>
+    {/* <Route path="sample" component={CoursePageSample}/> */}
   </Route>
 );
