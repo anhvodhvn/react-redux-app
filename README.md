@@ -87,4 +87,10 @@ these issues:
   Exclude dev-specific concerns
   Build React in production-mode
   Open prod build in browser
-  
+
+- Tasks:
+  - Setup Webpack
+  - Setup HTML Build
+  - Setup Dist Server
+  - Setup npm scripts
+  - Verify results  
