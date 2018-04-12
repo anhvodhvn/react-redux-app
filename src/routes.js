@@ -4,8 +4,8 @@ import App from './components/App';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import CoursePage from './components/course/CoursePage';
-import CoursePageSample from './components/course/CoursePageSample';
 import ManageCoursePage from './components/course/ManageCoursePage';
+import SamplePage from './components/sample/SamplePage';
 
 export default (
   <Route path="/" component={App}>
@@ -14,6 +14,6 @@ export default (
     <Route path="course" component={ManageCoursePage}/>
     <Route path="course/:id" component={ManageCoursePage}/>
     <Route path="about" component={AboutPage}/>
-    <Route path="sample" component={CoursePageSample}/>
+    <Route path="sample" component={SamplePage}/>
   </Route>
 );
