@@ -19,7 +19,10 @@ class ManageProductPage extends React.Component {
 
     /* this function life cycle will be called anytime when props have changed */
     componentWillReceiveProps(nextProps){
-        
+        if(this.props.product.id != nextProps.product.id){
+            // need to populate form when existing product is loaded directly
+            this.setState({product: Object.assign({}, nextProps.product)});
+        }
     }
 
     saveProduct() {
@@ -32,11 +35,11 @@ class ManageProductPage extends React.Component {
 
     render() {
         return (
-            <ProductForm 
-                allAuthors={this.props.authors}
+            <ProductForm
+                product={this.state.product}
+                authors={this.props.authors}
                 onChange={this.updateProductState}
                 onSave={this.saveProduct}
-                product={this.state.product}
                 errors={this.state.errors}
                 saving={this.state.saving}
             />
@@ -50,16 +53,26 @@ function getProductById(products, id){
     else return null;
 }
 
-function mapStateToProps(state, ownProps){
+ManageProductPage.propTypes = {
+    product: PropTypes.object.isRequired,
+    authors: PropTypes.array.isRequired
+}
+
+const mapStateToProps = (state, ownProps) => {
+    let productId = ownProps.params.id;
+    let product = {};
+    if(productId && state.products.length>0){
+        product = getProductById(state.products, productId);
+    }
+
     return {
-        product: state.product
+        product: product,
+        authors: state.authors
     };
 }
 
-function mapDispatchToProps(dispatch){
-    return {
-        actions: bindActionCreators(productActions, dispatch)
-    };
+const mapDispatchToProps = dispatch => {
+    bindActionCreators(productActions, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ManageProductPage);  

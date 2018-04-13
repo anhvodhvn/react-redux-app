@@ -43,6 +43,14 @@ const products = [
     authorId: "anhvodhvn",
     length: "5:10",
     category: "Desktop"
+  },
+  {
+    id: "6",
+    title: "Cafe Core I7",
+    watchHref: "http://www.pluralsight.com/courses/web-components-shadow-dom",
+    authorId: "anhvodhvn",
+    length: "6:10",
+    category: "Desktop"
   }
 ];
 

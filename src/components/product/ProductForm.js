@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import TextInput from '../common/TextInput';
 import SelectInput from '../common/SelectInput';
 
-const ProductForm = ({ product, allAuthors, onSave, onChange, saving, errors}) => {
+const ProductForm = ({ product, authors, onSave, onChange, saving, errors}) => {
     return (
         <form>
             <h1>Manage Product</h1>
@@ -13,13 +13,14 @@ const ProductForm = ({ product, allAuthors, onSave, onChange, saving, errors}) =
                 onChange={onChange}
                 error={errors.title}/>
 
-            {/* <SelectInput
+            <SelectInput
                 name="authorId"
                 label="Author"
                 value={product.authorId}
                 defaultOption="Select Author"
-                options={allAuthors}
-                onChange={onChange} error={errors.authorId}/> */}
+                options={authors}
+                onChange={onChange} 
+                error={errors.authorId}/>
 
             <TextInput
                 name="category"
@@ -47,7 +48,7 @@ const ProductForm = ({ product, allAuthors, onSave, onChange, saving, errors}) =
 
 ProductForm.propTypes = {
     product: PropTypes.object.isRequired,
-    allAuthors: PropTypes.array.isRequired,
+    authors: PropTypes.array.isRequired,
     onSave: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
     saving: PropTypes.bool,
