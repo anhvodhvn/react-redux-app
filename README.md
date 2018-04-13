@@ -70,4 +70,27 @@ these issues:
     handling errors
 
 - Testing React & Redux
+
+- Build Production:
+  /dist:
+    index.html
+    bundle.html
+    styles.css
   
+  /src:
+    alots of files ...
+
+- Production build process:
+  Lint and runs tests
+  Bundle and minify JS and CSS
+  Generate JS and CSS sourcemaps
+  Exclude dev-specific concerns
+  Build React in production-mode
+  Open prod build in browser
+
+- Tasks:
+  - Setup Webpack
+  - Setup HTML Build
+  - Setup Dist Server
+  - Setup npm scripts
+  - Verify results  
