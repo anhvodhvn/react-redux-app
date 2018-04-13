@@ -36,7 +36,7 @@ class SamplePage extends React.Component {
                 </div>
                 <div>
                     <h3>Demo Dropdown Menu</h3>
-                    <DemoDropdownMenu items={this.state.items} handleSelectedValue={this.handleSelectedValue}/>
+                    {/* <DemoDropdownMenu items={this.state.items} handleSelectedValue={this.handleSelectedValue}/> */}
                 </div>
             </div>
         );
