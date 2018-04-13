@@ -3,14 +3,13 @@ import {Route, IndexRoute} from 'react-router';
 import App from './components/App';
 
 import HomePage from './components/home/HomePage';
-import AboutPage from './components/about/AboutPage';
-
 import CoursePage from './components/course/CoursePage';
 import ManageCoursePage from './components/course/ManageCoursePage';
-//import CoursePageSample from './components/course/CoursePageSample';
-
 import ProductPage from './components/product/ProductPage';
 import ManageProductPage from './components/product/ManageProductPage';
+import AboutPage from './components/about/AboutPage';
+
+import SamplePage from './components/sample/SamplePage';
 
 export default (
   <Route path="/" component={App}>
@@ -22,6 +21,6 @@ export default (
     <Route path="product" component={ManageProductPage} />
     <Route path="product/:id" component={ManageProductPage} />
     <Route path="about" component={AboutPage}/>
-    {/* <Route path="sample" component={CoursePageSample}/> */}
+    <Route path="sample" component={SamplePage}/>
   </Route>
 );
