@@ -15,6 +15,9 @@ class ManageProductPage extends React.Component {
             errors: {},
             saving: false
         };
+
+        this.updateProductState = this.updateProductState.bind(this);
+        this.saveProduct = this.saveProduct.bind(this);
     }
 
     /* this function life cycle will be called anytime when props have changed */
@@ -25,19 +28,22 @@ class ManageProductPage extends React.Component {
         }
     }
 
-    saveProduct() {
-
+    saveProduct(event) {
+        event.preventDefault();
     }
 
-    updateProductState() {
-
+    updateProductState(event) {
+        let field = event.target.name;
+        let product = this.state.product;
+        product[field] = event.target.value;
+        return this.setState({product: product});
     }
 
     render() {
         return (
             <ProductForm
-                product={this.state.product}
                 authors={this.props.authors}
+                product={this.state.product}
                 onChange={this.updateProductState}
                 onSave={this.saveProduct}
                 errors={this.state.errors}
@@ -55,7 +61,8 @@ function getProductById(products, id){
 
 ManageProductPage.propTypes = {
     product: PropTypes.object.isRequired,
-    authors: PropTypes.array.isRequired
+    authors: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -72,7 +79,9 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => {
-    bindActionCreators(productActions, dispatch);
+    return { 
+        actions: bindActionCreators(productActions, dispatch)
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ManageProductPage);  

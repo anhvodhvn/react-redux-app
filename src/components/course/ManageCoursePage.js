@@ -29,7 +29,7 @@ class ManageCoursePage extends React.Component {
     }
 
     updateCourseState(event) {
-        const field = event.target.name;
+        let field = event.target.name;
         let course = this.state.course;
         course[field] = event.target.value;
         return this.setState({course: course});
@@ -98,6 +98,7 @@ function mapStateToProps(state, ownProps){
             text: author.firstName + ' ' + author.lastName
         };
     });
+    
     return {
         course: course,
         authors: formatDisplayNameAuthor
