@@ -84,10 +84,8 @@ function getCourseById(courses, id){
 }
 
 function mapStateToProps(state, ownProps){
-    let courseId = ownProps.params.id;
-
     let course = { id:'', watchHref: '', title: '', authorId: '', length: '', category: ''};
-
+    let courseId = ownProps.params.id;
     if(courseId && state.courses.length>0){
         course = getCourseById(state.courses, courseId);
     }
