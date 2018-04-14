@@ -29,7 +29,7 @@ class ManageCoursePage extends React.Component {
     }
 
     updateCourseState(event) {
-        const field = event.target.name;
+        let field = event.target.name;
         let course = this.state.course;
         course[field] = event.target.value;
         return this.setState({course: course});
@@ -84,10 +84,8 @@ function getCourseById(courses, id){
 }
 
 function mapStateToProps(state, ownProps){
-    let courseId = ownProps.params.id;
-
     let course = { id:'', watchHref: '', title: '', authorId: '', length: '', category: ''};
-
+    let courseId = ownProps.params.id;
     if(courseId && state.courses.length>0){
         course = getCourseById(state.courses, courseId);
     }
@@ -98,6 +96,7 @@ function mapStateToProps(state, ownProps){
             text: author.firstName + ' ' + author.lastName
         };
     });
+    
     return {
         course: course,
         authors: formatDisplayNameAuthor

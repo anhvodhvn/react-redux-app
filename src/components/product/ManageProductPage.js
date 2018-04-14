@@ -15,6 +15,9 @@ class ManageProductPage extends React.Component {
             errors: {},
             saving: false
         };
+
+        this.updateProductState = this.updateProductState.bind(this);
+        this.saveProduct = this.saveProduct.bind(this);
     }
 
     /* this function life cycle will be called anytime when props have changed */
@@ -25,19 +28,22 @@ class ManageProductPage extends React.Component {
         }
     }
 
-    saveProduct() {
-
+    saveProduct(event) {
+        event.preventDefault();
     }
 
-    updateProductState() {
-
+    updateProductState(event) {
+        let field = event.target.name;
+        let product = this.state.product;
+        product[field] = event.target.value;
+        return this.setState({product: product});
     }
 
     render() {
         return (
             <ProductForm
-                product={this.state.product}
                 authors={this.props.authors}
+                product={this.state.product}
                 onChange={this.updateProductState}
                 onSave={this.saveProduct}
                 errors={this.state.errors}
@@ -47,32 +53,46 @@ class ManageProductPage extends React.Component {
     }
 }
 
+ManageProductPage.propTypes = {
+    product: PropTypes.object.isRequired,
+    authors: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
+};
+
+ManageProductPage.contextTypes = {
+    router: PropTypes.object
+};
+
 function getProductById(products, id){
     let product = products.filter(product => product.id == id);
     if(product) return product[0];
     else return null;
 }
 
-ManageProductPage.propTypes = {
-    product: PropTypes.object.isRequired,
-    authors: PropTypes.array.isRequired
-}
-
 const mapStateToProps = (state, ownProps) => {
+    let product = { id:'', watchHref: '', title: '', authorId: '', length: '', category: ''};
     let productId = ownProps.params.id;
-    let product = {};
     if(productId && state.products.length>0){
         product = getProductById(state.products, productId);
     }
 
+    let formatDisplayNameAuthor = state.authors.map(author => {
+        return {
+            value: author.id,
+            text: author.firstName + ' ' + author.lastName
+        };
+    });
+
     return {
         product: product,
-        authors: state.authors
+        authors: formatDisplayNameAuthor
     };
 }
 
 const mapDispatchToProps = dispatch => {
-    bindActionCreators(productActions, dispatch);
+    return { 
+        actions: bindActionCreators(productActions, dispatch)
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ManageProductPage);  

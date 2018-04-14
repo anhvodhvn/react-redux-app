@@ -10,7 +10,6 @@ const DemoDropdownMenu = ({items, handleSelectedValue}) => {
         return (
             <MenuItem eventKey={item.id}>
                 {item.name}
-                {/* <Link to="/">Home</Link> */}
             </MenuItem>
         );
     });
