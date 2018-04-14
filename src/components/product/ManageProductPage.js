@@ -59,10 +59,6 @@ ManageProductPage.propTypes = {
     actions: PropTypes.object.isRequired
 };
 
-ManageProductPage.contextTypes = {
-    router: PropTypes.object
-};
-
 function getProductById(products, id){
     let product = products.filter(product => product.id == id);
     if(product) return product[0];
