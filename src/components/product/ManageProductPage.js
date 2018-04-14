@@ -76,9 +76,16 @@ const mapStateToProps = (state, ownProps) => {
         product = getProductById(state.products, productId);
     }
 
+    let formatDisplayNameAuthor = state.authors.map(author => {
+        return {
+            value: author.id,
+            text: author.firstName + ' ' + author.lastName
+        };
+    });
+
     return {
         product: product,
-        authors: state.authors
+        authors: formatDisplayNameAuthor
     };
 }
 
