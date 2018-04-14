@@ -53,21 +53,25 @@ class ManageProductPage extends React.Component {
     }
 }
 
+ManageProductPage.propTypes = {
+    product: PropTypes.object.isRequired,
+    authors: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
+};
+
+ManageProductPage.contextTypes = {
+    router: PropTypes.object
+};
+
 function getProductById(products, id){
     let product = products.filter(product => product.id == id);
     if(product) return product[0];
     else return null;
 }
 
-ManageProductPage.propTypes = {
-    product: PropTypes.object.isRequired,
-    authors: PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequired
-}
-
 const mapStateToProps = (state, ownProps) => {
+    let product = { id:'', watchHref: '', title: '', authorId: '', length: '', category: ''};
     let productId = ownProps.params.id;
-    let product = {};
     if(productId && state.products.length>0){
         product = getProductById(state.products, productId);
     }
