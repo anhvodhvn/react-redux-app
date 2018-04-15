@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import DemoProgressBar from './DemoProgressBar';
 import DemoDropdownMenu from './DemoDropdownMenu';
+import NavMultiLevel from '../common/NavMultiLevel';
 
 /* container components */
 class SamplePage extends React.Component {
@@ -35,8 +36,8 @@ class SamplePage extends React.Component {
                     <DemoProgressBar value={this.state.value}/>
                 </div>
                 <div>
-                    <h3>Demo Dropdown Menu</h3>
-                    {/* <DemoDropdownMenu items={this.state.items} handleSelectedValue={this.handleSelectedValue}/> */}
+                    <h3>Demo Dropdown Multi Level</h3>
+                    <NavMultiLevel />
                 </div>
             </div>
         );
