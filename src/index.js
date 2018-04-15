@@ -10,9 +10,10 @@ import { loadCourses } from './actions/courseActions';
 import { loadAuthors } from './actions/authorActions';
 import { loadProducts } from './actions/productActions';
 
-import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
+import './styles/NavMultiLevel.css';
+import './styles/styles.css';
 
 const store = new configureStore();
 store.dispatch(loadCourses());
