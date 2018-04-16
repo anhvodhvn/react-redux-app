@@ -13,6 +13,8 @@ const list = [
     { value: 'two', label: 'Two' },
     { value: 'three', label: 'Three' }
 ]
+import DemoReactSelect from './DemoReactSelect';
+
 /* container components */
 class SamplePage extends React.Component {
     constructor(props, context){
@@ -20,6 +22,7 @@ class SamplePage extends React.Component {
 
       this.state = {
           selectedOption: '',
+          selectedItem: '',
           value: 85,
           items: [
               { id: 1, name: 'First Action' },
@@ -29,6 +32,7 @@ class SamplePage extends React.Component {
           ]
       }
       this.handleChange = this.handleChange.bind(this);
+      this.handleSelectedItem = this.handleSelectedItem.bind(this);
     }
 
     handleChange(selectedOption){
@@ -36,9 +40,15 @@ class SamplePage extends React.Component {
         console.log(`Selected: ${selectedOption.label}`);
         console.log(selectedOption);
     }
+
+    handleSelectedItem(selectedItem){
+        this.setState({ selectedItem });
+        console.log(`selectedItem: ${selectedItem.label}`);
+        console.log(selectedItem);
+    }
     
     render() {
-        const { selectedOption } = this.state;
+        const { selectedOption, selectedItem } = this.state;
 
         return (
             <div>
@@ -58,6 +68,15 @@ class SamplePage extends React.Component {
                             value={selectedOption}
                             onChange={this.handleChange}
                             options={list}
+                    />
+                </div>
+
+                <div>
+                    <h3>Demo Custom React Select</h3>
+                    <DemoReactSelect name="demoreactselect"
+                                     items={list}
+                                     selectedItem={selectedItem}
+                                     changeSelectItem={this.handleSelectedItem}
                     />
                 </div>
             </div>
