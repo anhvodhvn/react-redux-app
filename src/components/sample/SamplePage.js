@@ -57,10 +57,6 @@ class SamplePage extends React.Component {
                     <h3>Demo ProgressBar</h3>
                     <DemoProgressBar value={this.state.value}/>
                 </div>
-                <div>
-                    <h3>Demo Dropdown Multi Level</h3>
-                    <NavMultiLevel />
-                </div>
 
                 <div>
                     <h3>Demo React Select</h3>
@@ -78,6 +74,11 @@ class SamplePage extends React.Component {
                                      selectedItem={selectedItem}
                                      changeSelectItem={this.handleSelectedItem}
                     />
+                </div>
+
+                <div>
+                    <h3>Demo Dropdown Multi Level</h3>
+                    <NavMultiLevel />
                 </div>
             </div>
         );
