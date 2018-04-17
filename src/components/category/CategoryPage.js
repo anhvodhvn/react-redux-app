@@ -6,10 +6,6 @@ import { browserHistory } from 'react-router';
 class CategoryPage extends React.Component {
     constructor(props, context){
       super(props, context);
-
-      this.state = {
-        Categories: []
-      }
     }
 
     render() {
@@ -23,23 +19,9 @@ class CategoryPage extends React.Component {
 
 
 /* provider proptypes validation */
-ProductPage.propTypes = {
-  Categories: PropTypes.array,
+CategoryPage.propTypes = {
+  categories: PropTypes.array,
   actions: PropTypes.object
 };
 
-
-/* redux connect related functions */
-function mapStateToProps(state, ownProps){
-  return {
-    Categories: state.Categories
-  };
-}
-
-function mapDispatchToProps(dispatch){
-  return {
-    actions: bindActionCreators(null, dispatch)
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);
+export default CategoryPage;
