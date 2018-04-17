@@ -7,6 +7,7 @@ import CoursePage from './components/course/CoursePage';
 import ManageCoursePage from './components/course/ManageCoursePage';
 import ProductPage from './components/product/ProductPage';
 import ManageProductPage from './components/product/ManageProductPage';
+import CategoryPage from './components/category/CategoryPage';
 import AboutPage from './components/about/AboutPage';
 
 import SamplePage from './components/sample/SamplePage';
@@ -20,6 +21,7 @@ export default (
     <Route path="products" component={ProductPage}/>
     <Route path="product" component={ManageProductPage} />
     <Route path="product/:id" component={ManageProductPage} />
+    <Route path="categories" component={CategoryPage} />
     <Route path="about" component={AboutPage}/>
     <Route path="sample" component={SamplePage}/>
   </Route>
