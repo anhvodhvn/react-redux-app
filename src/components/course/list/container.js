@@ -2,8 +2,8 @@ import React, {PropTypes} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router';
-import * as courseActions from '../../actions/courseActions';
-import CourseList from './CourseList';
+import * as courseActions from '../../../actions/courseActions';
+import Table from './table';
 
 /* container components */
 class CoursePage extends React.Component {
@@ -31,7 +31,7 @@ class CoursePage extends React.Component {
                         value="Add Course" 
                         className="btn btn-primary"
                         onClick={this.redirectToAddCoursePage} />
-                <CourseList courses={courses}/>
+                <Table courses={courses}/>
             </div>
         );
     }
@@ -40,8 +40,8 @@ class CoursePage extends React.Component {
 
 /* provider proptypes validation */
 CoursePage.propTypes = {
-  courses: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  courses: PropTypes.array,
+  actions: PropTypes.object
 };
 
 

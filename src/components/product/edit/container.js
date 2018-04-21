@@ -2,11 +2,10 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import toastr from 'toastr';
+import * as productActions from '../../../actions/productActions';
+import Form from './form';
 
-import * as productActions from '../../actions/productActions';
-import ProductForm from './ProductForm';
-
-class ManageProductPage extends React.Component {
+class EditProduct extends React.Component {
     constructor (props, context){
         super(props, context);
 
@@ -18,6 +17,7 @@ class ManageProductPage extends React.Component {
 
         this.updateProductState = this.updateProductState.bind(this);
         this.saveProduct = this.saveProduct.bind(this);
+        this.cancelProduct = this.cancelProduct.bind(this);
     }
 
     /* this function life cycle will be called anytime when props have changed */
@@ -30,6 +30,12 @@ class ManageProductPage extends React.Component {
 
     saveProduct(event) {
         event.preventDefault();
+        console.log('saveProduct ...');
+    }
+
+    cancelProduct(event){
+        event.preventDefault();
+        console.log('cancelProduct ...');
     }
 
     updateProductState(event) {
@@ -41,11 +47,12 @@ class ManageProductPage extends React.Component {
 
     render() {
         return (
-            <ProductForm
+            <Form
                 authors={this.props.authors}
                 product={this.state.product}
                 onChange={this.updateProductState}
                 onSave={this.saveProduct}
+                onCancel={this.cancelProduct}
                 errors={this.state.errors}
                 saving={this.state.saving}
             />
@@ -53,7 +60,7 @@ class ManageProductPage extends React.Component {
     }
 }
 
-ManageProductPage.propTypes = {
+EditProduct.propTypes = {
     product: PropTypes.object.isRequired,
     authors: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
@@ -91,4 +98,4 @@ const mapDispatchToProps = dispatch => {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageProductPage);  
+export default connect(mapStateToProps, mapDispatchToProps)(EditProduct);  
