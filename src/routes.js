@@ -7,14 +7,10 @@ import HomePage from './components/home/HomePage';
 import CoursePage from './components/course/CoursePage';
 import ManageCoursePage from './components/course/ManageCoursePage';
 
-// import ProductPage from './components/product/ProductPage';
-// import ManageProductPage from './components/product/ManageProductPage';
-
 import ProductPage from './components/product/list/container';
 import EditProduct from './components/product/edit/container';
 
 import AboutPage from './components/about/AboutPage';
-
 import SamplePage from './components/sample/SamplePage';
 
 export default (
