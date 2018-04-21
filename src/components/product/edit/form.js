@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
-import TextInput from '../common/TextInput';
-import SelectInput from '../common/SelectInput';
+import TextInput from '../../common/TextInput';
+import SelectInput from '../../common/SelectInput';
 
-const ProductForm = ({ product, authors, onSave, onChange, saving, errors}) => {
+const Form = ({ product, authors, onSave, onCancel, onChange, saving, errors}) => {
     return (
         <form>
             <h1>Manage Product</h1>
@@ -42,17 +42,25 @@ const ProductForm = ({ product, authors, onSave, onChange, saving, errors}) => {
                 value={saving ? 'Saving...' : 'Save'}
                 className="btn btn-primary"
                 onClick={onSave}/>
+
+            <input
+                type="button"
+                disabled={saving}
+                value={'Cancel'}
+                className="btn btn-danger"
+                onClick={onCancel}/>
         </form>
     );
 };
 
-ProductForm.propTypes = {
-    product: PropTypes.object.isRequired,
-    authors: PropTypes.array.isRequired,
-    onSave: PropTypes.func.isRequired,
-    onChange: PropTypes.func.isRequired,
+Form.propTypes = {
+    product: PropTypes.object,
+    authors: PropTypes.array,
+    onSave: PropTypes.func,
+    onCancel: PropTypes.func,
+    onChange: PropTypes.func,
     saving: PropTypes.bool,
     errors: PropTypes.object
 };
 
-export default ProductForm;
+export default Form;

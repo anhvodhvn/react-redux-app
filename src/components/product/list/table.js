@@ -1,7 +1,9 @@
 import React, {PropTypes} from 'react';
-import ProductListRow from './ProductListRow';
+import Row from './row';
+import Header from './header';
+import Footer from './footer';
 
-const ProductList = ({products}) => {
+const Table = ({products}) => {
   return (
     <table className="table">
       <thead>
@@ -15,15 +17,15 @@ const ProductList = ({products}) => {
       </thead>
       <tbody>
         {
-          products.map(product => <ProductListRow key={product.id} product={product}/>)
+          products.map(product => <Row key={product.id} product={product}/>)
         }
       </tbody>
     </table>
   );
 };
 
-ProductList.propTypes = {
+Table.propTypes = {
     products: PropTypes.array.isRequired
 };
 
-export default ProductList;
+export default Table;

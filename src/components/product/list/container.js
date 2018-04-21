@@ -2,8 +2,8 @@ import React, {PropTypes} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router';
-import * as productActions from '../../actions/productActions';
-import ProductList from './ProductList';
+import * as productActions from '../../../actions/productActions';
+import Table from './table';
 
 /* container components */
 class ProductPage extends React.Component {
@@ -27,7 +27,7 @@ class ProductPage extends React.Component {
                         value="Add Product" 
                         className="btn btn-primary"
                         onClick={this.redirectToAddProductPage} />
-                <ProductList products={products}/>
+                <Table products={products}/>
             </div>
         );
     }

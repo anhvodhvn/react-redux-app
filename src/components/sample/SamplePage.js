@@ -12,7 +12,7 @@ const list = [
     { value: 'one', label: 'One' },
     { value: 'two', label: 'Two' },
     { value: 'three', label: 'Three' }
-]
+];
 import DemoReactSelect from './DemoReactSelect';
 
 /* container components */
@@ -30,21 +30,21 @@ class SamplePage extends React.Component {
               { id: 3, name: 'Third Action' },
               { id: 4, name: 'Four Action' }
           ]
-      }
+      };
       this.handleChange = this.handleChange.bind(this);
       this.handleSelectedItem = this.handleSelectedItem.bind(this);
     }
 
     handleChange(selectedOption){
         this.setState({ selectedOption });
-        console.log(`Selected: ${selectedOption.label}`);
-        console.log(selectedOption);
+        //console.log(`Selected: ${selectedOption.label}`);
+        //console.log(selectedOption);
     }
 
     handleSelectedItem(selectedItem){
         this.setState({ selectedItem });
-        console.log(`selectedItem: ${selectedItem.label}`);
-        console.log(selectedItem);
+        //console.log(`selectedItem: ${selectedItem.label}`);
+        //console.log(selectedItem);
     }
     
     render() {
