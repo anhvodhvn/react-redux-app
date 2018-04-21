@@ -14,7 +14,7 @@ const Row = ({product}) => {
 };
 
 Row.propTypes = {
-    product: PropTypes.object.isRequired
+    product: PropTypes.object
 };
 
 export default Row;

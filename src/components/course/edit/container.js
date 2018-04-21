@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import toastr from 'toastr';
 
-import * as courseActions from '../../actions/courseActions';
-import CourseForm from './CourseForm';
+import * as courseActions from '../../../actions/courseActions';
+import Form from './form';
 
-class ManageCoursePage extends React.Component {
+class EditCourse extends React.Component {
     constructor (props, context){
         super(props, context);
 
@@ -55,7 +55,7 @@ class ManageCoursePage extends React.Component {
 
     render() {
         return (
-            <CourseForm 
+            <Form 
                 allAuthors={this.props.authors}
                 onChange={this.updateCourseState}
                 onSave={this.saveCourse}
@@ -67,13 +67,13 @@ class ManageCoursePage extends React.Component {
     }
 }
 
-ManageCoursePage.propTypes = {
-    course: PropTypes.object.isRequired,
-    authors: PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequired
+EditCourse.propTypes = {
+    course: PropTypes.object,
+    authors: PropTypes.array,
+    actions: PropTypes.object
 };
 
-ManageCoursePage.contextTypes = {
+EditCourse.contextTypes = {
     router: PropTypes.object
 };
 
@@ -109,4 +109,4 @@ function mapDispatchToProps(dispatch){
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageCoursePage);  
+export default connect(mapStateToProps, mapDispatchToProps)(EditCourse);  

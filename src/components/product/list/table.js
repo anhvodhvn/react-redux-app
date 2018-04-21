@@ -25,7 +25,7 @@ const Table = ({products}) => {
 };
 
 Table.propTypes = {
-    products: PropTypes.array.isRequired
+    products: PropTypes.array
 };
 
 export default Table;

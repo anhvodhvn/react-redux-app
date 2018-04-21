@@ -40,8 +40,8 @@ class CoursePage extends React.Component {
 
 /* provider proptypes validation */
 CoursePage.propTypes = {
-  courses: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  courses: PropTypes.array,
+  actions: PropTypes.object
 };
 
 
