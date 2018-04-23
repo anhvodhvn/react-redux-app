@@ -1,7 +1,9 @@
 import React, {PropTypes} from 'react';
-import CourseListRow from './CourseListRow';
+import Row from './row';
+import Header from './header';
+import Footer from './footer';
 
-const CourseList = ({courses}) => {
+const Table = ({courses}) => {
   return (
     <table className="table">
       <thead>
@@ -15,15 +17,15 @@ const CourseList = ({courses}) => {
       </thead>
       <tbody>
         {
-          courses.map(course => <CourseListRow key={course.id} course={course}/>)
+          courses.map(course => <Row key={course.id} course={course}/>)
         }
       </tbody>
     </table>
   );
 };
 
-CourseList.propTypes = {
-  courses: PropTypes.array.isRequired
+Table.propTypes = {
+  courses: PropTypes.array
 };
 
-export default CourseList;
+export default Table;

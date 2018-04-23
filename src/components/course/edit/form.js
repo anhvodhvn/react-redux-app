@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
-import TextInput from '../common/TextInput';
-import SelectInput from '../common/SelectInput';
+import TextInput from '../../common/TextInput';
+import SelectInput from '../../common/SelectInput';
 
-const CourseForm = ({ course, allAuthors, onSave, onChange, saving, errors}) => {
+const Form = ({ course, allAuthors, onSave, onChange, saving, errors}) => {
     return (
         <form>
             <h1>Manage Course</h1>
@@ -46,13 +46,13 @@ const CourseForm = ({ course, allAuthors, onSave, onChange, saving, errors}) => 
     );
 };
 
-CourseForm.propTypes = {
-    course: PropTypes.object.isRequired,
-    allAuthors: PropTypes.array.isRequired,
-    onSave: PropTypes.func.isRequired,
-    onChange: PropTypes.func.isRequired,
+Form.propTypes = {
+    course: PropTypes.object,
+    allAuthors: PropTypes.array,
+    onSave: PropTypes.func,
+    onChange: PropTypes.func,
     saving: PropTypes.bool,
     errors: PropTypes.object
 };
 
-export default CourseForm;
+export default Form;
