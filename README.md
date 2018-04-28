@@ -94,3 +94,5 @@ these issues:
   - Setup Dist Server
   - Setup npm scripts
   - Verify results  
+
+- template: https://github.com/rafaelhz/react-material-admin-template
