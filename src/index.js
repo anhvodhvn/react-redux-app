@@ -12,8 +12,8 @@ import { loadProducts } from './actions/productActions';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
-import './styles/NavMultiLevel.css';
-import './styles/styles.css';
+import './styles/nav_multi_level.css';
+import './styles/app.css';
 
 const store = new configureStore();
 store.dispatch(loadCourses());
