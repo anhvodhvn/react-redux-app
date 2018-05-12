@@ -23,7 +23,7 @@ export default {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin(GLOBAL),
-    new ExtraTextPlugin('style.css'),
+    new ExtraTextPlugin('app.css'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin()
   ],

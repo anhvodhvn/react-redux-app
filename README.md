@@ -1,5 +1,6 @@
 react-redux-app
 
+- nodejs version: 8.11.1
 - setup dev environment:
     babel
     webpack
