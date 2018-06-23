@@ -7,10 +7,10 @@ const DemoProgressBar = ({value}) => {
             <ProgressBar now={value} label={`${value}%`}/>
         </div>
     );
-}
+};
 
 DemoProgressBar.propTypes = {
     value: PropTypes.number.isRequired
-}
+};
 
 export default DemoProgressBar;
