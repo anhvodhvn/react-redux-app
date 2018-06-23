@@ -23,7 +23,7 @@ export default (
     <Route path="products" component={ProductPage}/>
     <Route path="product" component={EditProduct} />
     <Route path="product/:id" component={EditProduct} />
-
+    
     <Route path="about" component={AboutPage}/>
     <Route path="sample" component={SamplePage}/>
   </Route>
