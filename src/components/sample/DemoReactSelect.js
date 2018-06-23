@@ -10,12 +10,12 @@ const DemoReactSelect = ({items, selectedItem, changeSelectItem}) => {
                 options={items}
         />
     );
-}
+};
 
 DemoReactSelect.propTypes = {
     items: PropTypes.array,
     selectedItem: PropTypes.string,
     changeSelectItem: PropTypes.func
-}
+};
 
 export default DemoReactSelect;
