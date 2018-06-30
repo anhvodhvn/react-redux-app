@@ -1,5 +1,4 @@
 import React, {PropTypes} from 'react';
-//import { Link } from 'react-router';
 import { DropdownButton, MenuItem } from 'react-bootstrap';
 
 const DemoDropdownMenu = ({items, handleSelectedValue}) => {
