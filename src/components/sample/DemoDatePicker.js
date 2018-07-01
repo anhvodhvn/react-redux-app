@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { DateTimePicker } from 'react-widgets';
 
-const FormDatePicker = ({ input: { onChange, value }, showTime, classWrapper, meta: {error, touched}, disabled }) => {
+const DemoDatePicker = ({ input: { onChange, value }, showTime, classWrapper, meta: {error, touched}, disabled }) => {
     return (
         <div className={classWrapper}>
             <DateTimePicker 
@@ -18,11 +18,11 @@ const FormDatePicker = ({ input: { onChange, value }, showTime, classWrapper, me
     );
 };
 
-FormDatePicker.propTypes = {
+DemoDatePicker.propTypes = {
     input: PropTypes.object,
     showTime: PropTypes.bool,
     classWrapper: PropTypes.string,
     meta: PropTypes.object,
 };
 
-export default FormDatePicker;
+export default DemoDatePicker;
