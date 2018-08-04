@@ -32,13 +32,11 @@ class ProductContainer extends React.Component {
         }
     }
 
-    saveProduct(event) {
-        event.preventDefault();
-        console.log('saveProduct ...');
+    saveProduct(values) {
+        console.log('values ...', values);
     }
 
-    cancelProduct(event){
-        event.preventDefault();
+    cancelProduct(){
         console.log('cancelProduct ...');
     }
 

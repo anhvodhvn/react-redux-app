@@ -3,15 +3,15 @@ import { Field, reduxForm } from 'redux-form';
 import TextInput from '../../common/TextInput';
 import SelectInput from '../../common/SelectInput';
 
-const FormProductEdit = ({ product, authors, onSave, onCancel, onChange, saving, errors}) => {
+const FormProductEdit = ({ product, authors, onSave, onCancel, saving, errors}) => {
     return (
         <form>
             <h1>Manage Product</h1>
+            <Field name='title' component={TextInput} label='Title' placeholder='Title' />
             <TextInput
                 name="title"
                 label="Title"
                 value={product.title}
-                onChange={onChange}
                 error={errors.title}/>
 
             <SelectInput
@@ -20,36 +20,32 @@ const FormProductEdit = ({ product, authors, onSave, onCancel, onChange, saving,
                 value={product.authorId}
                 defaultOption="Select Author"
                 options={authors}
-                onChange={onChange} 
                 error={errors.authorId}/>
 
             <TextInput
                 name="category"
                 label="Category"
                 value={product.category}
-                onChange={onChange}
                 error={errors.category}/>
 
             <TextInput
                 name="length"
                 label="Length"
                 value={product.length}
-                onChange={onChange}
+                
                 error={errors.length}/>
 
-            <input
+            <button
                 type="submit"
                 disabled={saving}
-                value={saving ? 'Saving...' : 'Save'}
                 className="btn btn-primary"
-                onClick={onSave}/>
+                onClick={onSave}>Save</button>
 
-            <input
+            <button
                 type="button"
                 disabled={saving}
-                value={'Cancel'}
                 className="btn btn-danger"
-                onClick={onCancel}/>
+                onClick={onCancel}>Cancel</button>
         </form>
     );
 };
@@ -59,7 +55,6 @@ FormProductEdit.propTypes = {
     authors: PropTypes.array,
     onSave: PropTypes.func,
     onCancel: PropTypes.func,
-    onChange: PropTypes.func,
     saving: PropTypes.bool,
     errors: PropTypes.object
 };
