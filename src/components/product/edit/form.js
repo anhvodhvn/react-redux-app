@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
+import { Field, reduxForm } from 'redux-form'; 
 import TextInput from '../../common/TextInput';
 import SelectInput from '../../common/SelectInput';
 
-const Form = ({ product, authors, onSave, onCancel, onChange, saving, errors}) => {
+const FormProductEdit = ({ product, authors, onSave, onCancel, onChange, saving, errors}) => {
     return (
         <form>
             <h1>Manage Product</h1>
@@ -53,7 +54,7 @@ const Form = ({ product, authors, onSave, onCancel, onChange, saving, errors}) =
     );
 };
 
-Form.propTypes = {
+FormProductEdit.propTypes = {
     product: PropTypes.object,
     authors: PropTypes.array,
     onSave: PropTypes.func,
@@ -63,4 +64,6 @@ Form.propTypes = {
     errors: PropTypes.object
 };
 
-export default Form;
+export default reduxForm({
+    form: 'FormProductEdit' // a unique identifier for this form
+})(FormProductEdit) 

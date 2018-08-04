@@ -1,21 +1,25 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import toastr from 'toastr';
 import * as productActions from '../../../actions/productActions';
 import Form from './form';
 
-class EditProduct extends React.Component {
+const getProductById = (products, id) => {
+    let product = products.find(product => product.id == id);
+    if(product) return product;
+    else return null;
+}
+
+class ProductContainer extends React.Component {
     constructor (props, context){
         super(props, context);
 
         this.state = {
-            product: Object.assign({}, this.props.product),
+            product: {},
             errors: {},
             saving: false
         };
 
-        this.updateProductState = this.updateProductState.bind(this);
         this.saveProduct = this.saveProduct.bind(this);
         this.cancelProduct = this.cancelProduct.bind(this);
     }
@@ -38,19 +42,11 @@ class EditProduct extends React.Component {
         console.log('cancelProduct ...');
     }
 
-    updateProductState(event) {
-        let field = event.target.name;
-        let product = this.state.product;
-        product[field] = event.target.value;
-        return this.setState({product: product});
-    }
-
     render() {
         return (
             <Form
                 authors={this.props.authors}
                 product={this.state.product}
-                onChange={this.updateProductState}
                 onSave={this.saveProduct}
                 onCancel={this.cancelProduct}
                 errors={this.state.errors}
@@ -60,17 +56,11 @@ class EditProduct extends React.Component {
     }
 }
 
-EditProduct.propTypes = {
+ProductContainer.propTypes = {
     product: PropTypes.object.isRequired,
     authors: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
 };
-
-function getProductById(products, id){
-    let product = products.filter(product => product.id == id);
-    if(product) return product[0];
-    else return null;
-}
 
 const mapStateToProps = (state, ownProps) => {
     let product = { id:'', watchHref: '', title: '', authorId: '', length: '', category: ''};
@@ -98,4 +88,4 @@ const mapDispatchToProps = dispatch => {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditProduct);  
+export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer);  
