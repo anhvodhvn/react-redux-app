@@ -31,7 +31,6 @@
     "react-select": "^1.2.1",
     "redux": "3.5.2",
     "redux-form": "5.3.5",
-    "redux-thunk": "2.0.1",
     "toastr": "2.1.2"
   },
   "devDependencies": {

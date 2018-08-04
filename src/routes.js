@@ -11,6 +11,7 @@ import EditProduct from './components/product/edit/container';
 
 import AboutPage from './components/about/AboutPage';
 import SamplePage from './components/sample/SamplePage';
+import SampleFormPage from './components/sampleform/SampleFormPage';
 
 export default (
   <Route path="/" component={App}>
@@ -26,5 +27,6 @@ export default (
     
     <Route path="about" component={AboutPage}/>
     <Route path="sample" component={SamplePage}/>
+    <Route path="sampleform" component={SampleFormPage}/>
   </Route>
 );
