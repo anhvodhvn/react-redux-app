@@ -1,12 +1,8 @@
 import React, {PropTypes} from 'react';
 
 const TextInput = ({ input, name, label, placeholder, value, onChange, meta: {error, touched} }) => {
-  let wrapperClass = 'form-group';
-  if (error && error.length > 0) {
-    wrapperClass += " " + 'has-error';
-  }
   return (
-    <div className={wrapperClass}>
+    <div className={`form-group ${(error && touched) ? 'has-error' : ''}`}>
       <label htmlFor={name}>{label}</label>
       <div className="field">
         <input  {...input}
