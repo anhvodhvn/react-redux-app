@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form'; 
 import InputText from '../../common/InputText';
 import InputSelect from '../../common/InputSelect';
+import InputDatePicker from '../../common/InputDatePicker';
 import validate from './validate';
 
 const FormProductEdit = ({ authors, category, handleSubmit, handleCancel, saving, errors}) => {
@@ -15,6 +16,8 @@ const FormProductEdit = ({ authors, category, handleSubmit, handleCancel, saving
             <Field name='category' component={InputSelect} options={category} label='Category' placeholder='Select Category' />
 
             <Field name='length' component={InputText} label='Length' placeholder='Length' />
+
+            <Field name='published' component={InputDatePicker} label='Published' placeholder='Published Date' />
 
             <button type='submit' disabled={saving} className='btn btn-primary'>Save</button>
             <button type='button' disabled={saving} className='btn btn-danger' onClick={handleCancel}>Cancel</button>

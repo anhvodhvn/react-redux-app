@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as productActions from '../../../actions/productActions';
 import Form from './form';
 
 const getProductById = (products, id) => {
@@ -63,7 +62,7 @@ ProductEdit.contextTypes = {
     router: PropTypes.object
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStoreToProps = (state, ownProps) => {
     let product = { id:'', watchHref: '', title: '', authorId: '', length: '', category: ''};
     let productId = ownProps.params.id;
     if(productId && state.products.length>0){
@@ -83,10 +82,9 @@ const mapStateToProps = (state, ownProps) => {
     };
 }
 
-const mapDispatchToProps = dispatch => {
-    return { 
-        actions: bindActionCreators(productActions, dispatch)
-    };
-}
+const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+    }, dispatch)
+)
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductEdit);  
+export default connect(mapStoreToProps, mapDispatchToProps)(ProductEdit);  
