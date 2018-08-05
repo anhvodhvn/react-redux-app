@@ -15,38 +15,37 @@ class ProductContainer extends React.Component {
         super(props, context);
 
         this.state = {
-            product: {},
             errors: {},
             saving: false
         };
 
-        this.saveProduct = this.saveProduct.bind(this);
-        this.cancelProduct = this.cancelProduct.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
     /* this function life cycle will be called anytime when props have changed */
-    componentWillReceiveProps(nextProps){
-        if(this.props.product.id != nextProps.product.id){
-            // need to populate form when existing product is loaded directly
-            this.setState({product: Object.assign({}, nextProps.product)});
-        }
+    // componentWillReceiveProps(nextProps){
+    //     if(this.props.product.id != nextProps.product.id){
+    //         // need to populate form when existing product is loaded directly
+    //         this.setState({product: Object.assign({}, nextProps.product)});
+    //     }
+    // }
+
+    handleSubmit(values) {
+        console.log('values:', values);
     }
 
-    saveProduct(values) {
-        console.log('values ...', values);
-    }
-
-    cancelProduct(){
-        console.log('cancelProduct ...');
+    handleCancel(){
+        console.log('handleCancel');
     }
 
     render() {
         return (
             <Form
                 authors={this.props.authors}
-                product={this.state.product}
-                onSave={this.saveProduct}
-                onCancel={this.cancelProduct}
+                category={this.props.authors}
+                onSubmit={this.handleSubmit}
+                handleCancel={this.handleCancel}
                 errors={this.state.errors}
                 saving={this.state.saving}
             />
@@ -55,9 +54,9 @@ class ProductContainer extends React.Component {
 }
 
 ProductContainer.propTypes = {
-    product: PropTypes.object.isRequired,
-    authors: PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequired
+    product: PropTypes.object,
+    authors: PropTypes.array,
+    actions: PropTypes.object
 };
 
 const mapStateToProps = (state, ownProps) => {
