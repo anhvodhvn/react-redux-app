@@ -12,7 +12,7 @@ const TextInput = ({ input, name, label, placeholder, value, onChange, meta: {er
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}/>
-        {error && <div className="alert alert-danger">{error}</div>}
+        {error && touched && <div className="text-danger">{error}</div>}
       </div>
     </div>
   );
