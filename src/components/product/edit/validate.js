@@ -13,15 +13,15 @@ const validation = values => {
     //         errors[field] = `Value must be larger current date`;
     // });
 
-    // ['notes'].forEach((field) => {
-    //     if(values[field] && values[field].length < DEFAULT_MIN_LENGTH)
-    //         errors[field] = `Must be at least ${DEFAULT_MIN_LENGTH} characters`;
-    // });
+    ['title'].forEach((field) => {
+        if(values[field] && values[field].length < DEFAULT_MIN_LENGTH)
+            errors[field] = `Must be at least ${DEFAULT_MIN_LENGTH} characters`;
+    });
 
-    // ['notes'].forEach((field) => {
-    //     if(values[field] && values[field].length > DEFAULT_MAX_LENGTH)
-    //         errors[field] = `Must be at least ${DEFAULT_MAX_LENGTH} characters`;
-    // });
+    ['title'].forEach((field) => {
+        if(values[field] && values[field].length > DEFAULT_MAX_LENGTH)
+            errors[field] = `Must be at least ${DEFAULT_MAX_LENGTH} characters`;
+    });
 
     // if(Array.isArray(values.leaves) && values.leaves.length){
     //     let membersArrayErrors = [];

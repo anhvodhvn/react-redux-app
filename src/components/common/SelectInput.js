@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 
-const SelectInput = ({ input, name, label, placeholder, value, defaultValue, options, onChange, meta: {error, touched} }) => {
+const SelectInput = ({ input, name, label, placeholder, value, defaultValue, options, onChange, meta: {error, touched, dirty, pristine} }) => {
   return (
-    <div className={`form-group ${(error && touched) ? 'has-error' : ''}`}>
+    <div className={`form-group ${(error && dirty) ? 'has-error' : ''}`}>
       <label htmlFor={name}>{label}</label>
       <div className="field">
         {/* Note, value is set here rather than on the option - docs: https://facebook.github.io/react/docs/forms.html */}
@@ -17,7 +17,7 @@ const SelectInput = ({ input, name, label, placeholder, value, defaultValue, opt
               options.map((option) => { return <option key={option.value} value={option.value}>{option.text}</option>; })
             }
         </select>
-        {error && touched && <div className="text-danger">{error}</div>}
+        {error && dirty && <div className="text-danger">{error}</div>}
       </div>
     </div>
   );
