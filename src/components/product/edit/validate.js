@@ -4,9 +4,9 @@ const DEFAULT_MAX_LENGTH = 50;
 const validation = values => {
     let errors = {};
     
-    // ['leaveType', 'notes', 'start_date', 'start_time', 'end_date', 'end_time'].forEach(field => {
-    //     if(!values[field]) errors[field]= 'Required';
-    // });
+    ['title', 'author', 'category', 'length'].forEach(field => {
+        if(!values[field]) errors[field]= 'Required';
+    });
 
     // ['start_date', 'end_date'].forEach((field) => {
     //     if(values[field] && new Date(values[field]) <= (new Date()))
