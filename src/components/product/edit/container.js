@@ -10,7 +10,7 @@ const getProductById = (products, id) => {
     else return null;
 }
 
-class ProductContainer extends React.Component {
+class ProductEdit extends React.Component {
     constructor (props, context){
         super(props, context);
 
@@ -36,7 +36,7 @@ class ProductContainer extends React.Component {
     }
 
     handleCancel(){
-        console.log('handleCancel');
+        this.context.router.push('/products');
     }
 
     render() {
@@ -53,10 +53,14 @@ class ProductContainer extends React.Component {
     }
 }
 
-ProductContainer.propTypes = {
+ProductEdit.propTypes = {
     product: PropTypes.object,
     authors: PropTypes.array,
     actions: PropTypes.object
+};
+
+ProductEdit.contextTypes = {
+    router: PropTypes.object
 };
 
 const mapStateToProps = (state, ownProps) => {
@@ -85,4 +89,4 @@ const mapDispatchToProps = dispatch => {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer);  
+export default connect(mapStateToProps, mapDispatchToProps)(ProductEdit);  

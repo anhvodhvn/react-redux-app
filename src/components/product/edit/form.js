@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form'; 
 import TextInput from '../../common/TextInput';
 import SelectInput from '../../common/SelectInput';
+import validate from './validate';
 
 const FormProductEdit = ({ authors, category, handleSubmit, handleCancel, saving, errors}) => {
     return (
@@ -31,5 +32,6 @@ FormProductEdit.propTypes = {
 };
 
 export default reduxForm({
-    form: 'FormProductEdit' // a unique identifier for this form
+    form: 'FormProductEdit',
+    validate
 })(FormProductEdit) 
