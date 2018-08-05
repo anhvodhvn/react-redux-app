@@ -1,20 +1,20 @@
 import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form'; 
-import TextInput from '../../common/TextInput';
-import SelectInput from '../../common/SelectInput';
+import InputText from '../../common/InputText';
+import InputSelect from '../../common/InputSelect';
 import validate from './validate';
 
 const FormProductEdit = ({ authors, category, handleSubmit, handleCancel, saving, errors}) => {
     return (
         <form onSubmit={handleSubmit}>
             <h1>Manage Product</h1>
-            <Field name='title' component={TextInput} label='Title' placeholder='Title' />
+            <Field name='title' component={InputText} label='Title' placeholder='Title' />
 
-            <Field name='author' component={SelectInput} options={authors} label='Author' placeholder='Select Author' />
+            <Field name='author' component={InputSelect} options={authors} label='Author' placeholder='Select Author' />
 
-            <Field name='category' component={SelectInput} options={category} label='Category' placeholder='Select Category' />
+            <Field name='category' component={InputSelect} options={category} label='Category' placeholder='Select Category' />
 
-            <Field name='length' component={TextInput} label='Length' placeholder='Length' />
+            <Field name='length' component={InputText} label='Length' placeholder='Length' />
 
             <button type='submit' disabled={saving} className='btn btn-primary'>Save</button>
             <button type='button' disabled={saving} className='btn btn-danger' onClick={handleCancel}>Cancel</button>

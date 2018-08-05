@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, IndexLink } from 'react-router';
-//import LoadingDot from './LoadingDot';
 
 const Header = ({loading}) => {
   return (
@@ -15,13 +15,12 @@ const Header = ({loading}) => {
       {" | "}
       <Link to="/sample" activeClassName="active">Sample</Link>
       {" | "}
-      {/* <LoadingDot interval={100} dots={10} loading={loading}/> */}
     </nav>
   );
 };
 
 Header.propTypes = {
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool
 };
 
 export default Header;

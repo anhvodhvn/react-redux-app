@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router';
@@ -36,10 +37,9 @@ class ProductPage extends React.Component {
 
 /* provider proptypes validation */
 ProductPage.propTypes = {
-  products: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  products: PropTypes.array,
+  actions: PropTypes.object
 };
-
 
 /* redux connect related functions */
 function mapStateToProps(state, ownProps){
