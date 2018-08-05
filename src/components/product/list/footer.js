@@ -1,12 +1,9 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 
 const Footer = ({}) => {
   return (
     <div>Footer</div>
   );
-};
-
-Footer.propTypes = {
 };
 
 export default Footer;
