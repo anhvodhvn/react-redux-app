@@ -1,66 +1,37 @@
 import React, { PropTypes } from 'react';
+import { Field, reduxForm } from 'redux-form'; 
 import TextInput from '../../common/TextInput';
 import SelectInput from '../../common/SelectInput';
+import validate from './validate';
 
-const Form = ({ product, authors, onSave, onCancel, onChange, saving, errors}) => {
+const FormProductEdit = ({ authors, category, handleSubmit, handleCancel, saving, errors}) => {
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <h1>Manage Product</h1>
-            <TextInput
-                name="title"
-                label="Title"
-                value={product.title}
-                onChange={onChange}
-                error={errors.title}/>
+            <Field name='title' component={TextInput} label='Title' placeholder='Title' />
 
-            <SelectInput
-                name="authorId"
-                label="Author"
-                value={product.authorId}
-                defaultOption="Select Author"
-                options={authors}
-                onChange={onChange} 
-                error={errors.authorId}/>
+            <Field name='author' component={SelectInput} options={authors} label='Author' placeholder='Select Author' />
 
-            <TextInput
-                name="category"
-                label="Category"
-                value={product.category}
-                onChange={onChange}
-                error={errors.category}/>
+            <Field name='category' component={SelectInput} options={category} label='Category' placeholder='Select Category' />
 
-            <TextInput
-                name="length"
-                label="Length"
-                value={product.length}
-                onChange={onChange}
-                error={errors.length}/>
+            <Field name='length' component={TextInput} label='Length' placeholder='Length' />
 
-            <input
-                type="submit"
-                disabled={saving}
-                value={saving ? 'Saving...' : 'Save'}
-                className="btn btn-primary"
-                onClick={onSave}/>
-
-            <input
-                type="button"
-                disabled={saving}
-                value={'Cancel'}
-                className="btn btn-danger"
-                onClick={onCancel}/>
+            <button type='submit' disabled={saving} className='btn btn-primary'>Save</button>
+            <button type='button' disabled={saving} className='btn btn-danger' onClick={handleCancel}>Cancel</button>
         </form>
     );
 };
 
-Form.propTypes = {
-    product: PropTypes.object,
+FormProductEdit.propTypes = {
     authors: PropTypes.array,
-    onSave: PropTypes.func,
-    onCancel: PropTypes.func,
-    onChange: PropTypes.func,
+    category: PropTypes.array,
+    handleSubmit: PropTypes.func,
+    handleCancel: PropTypes.func,
     saving: PropTypes.bool,
     errors: PropTypes.object
 };
 
-export default Form;
+export default reduxForm({
+    form: 'FormProductEdit',
+    validate
+})(FormProductEdit) 
