@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 
 const TextInput = ({ input, name, label, placeholder, value, onChange, meta: {error, touched, dirty, pristine} }) => {
   return (
-    <div className={`form-group ${(error && dirty) ? 'has-error' : ''}`}>
+    <div className={`form-group ${(error && touched) ? 'has-error' : ''}`}>
       <label htmlFor={name}>{label}</label>
       <div className="field">
         <input  {...input}
@@ -12,7 +12,7 @@ const TextInput = ({ input, name, label, placeholder, value, onChange, meta: {er
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}/>
-        {error && dirty && <div className="text-danger">{error}</div>}
+        {error && touched && <div className="text-danger">{error}</div>}
       </div>
     </div>
   );
