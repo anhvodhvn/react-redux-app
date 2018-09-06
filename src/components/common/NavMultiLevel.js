@@ -1,5 +1,5 @@
 import React from 'react';
-const NavMultiLevel = ({}) => {
+const NavMultiLevel = () => {
   return (
     <div className="main-nav-level">
         <ul>
