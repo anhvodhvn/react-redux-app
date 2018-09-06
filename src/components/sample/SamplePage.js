@@ -1,9 +1,5 @@
-import React, {PropTypes} from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
+import React from 'react';
 import DemoProgressBar from './DemoProgressBar';
-import DemoDropdownMenu from './DemoDropdownMenu';
 import NavMultiLevel from '../common/NavMultiLevel';
 
 import Select from 'react-select';
@@ -37,19 +33,14 @@ class SamplePage extends React.Component {
 
     handleChange(selectedOption){
         this.setState({ selectedOption });
-        //console.log(`Selected: ${selectedOption.label}`);
-        //console.log(selectedOption);
     }
 
     handleSelectedItem(selectedItem){
         this.setState({ selectedItem });
-        //console.log(`selectedItem: ${selectedItem.label}`);
-        //console.log(selectedItem);
     }
     
     render() {
         const { selectedOption, selectedItem } = this.state;
-
         return (
             <div>
                 <h1>Sample Page</h1>
