@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 const NavMultiLevel = ({}) => {
   return (
     <div className="main-nav-level">
