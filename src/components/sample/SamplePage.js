@@ -80,6 +80,14 @@ class SamplePage extends React.Component {
                     <h3>Demo Dropdown Multi Level</h3>
                     <NavMultiLevel />
                 </div>
+
+                <div>
+                    <form>
+                        <h3>Upload File</h3>
+                        <input type="file" name="myFile" />
+                        <input type="submit" />
+                    </form>
+                </div>
             </div>
         );
     }
