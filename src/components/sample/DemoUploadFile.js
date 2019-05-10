@@ -1,16 +1,15 @@
 import React, {PropTypes} from 'react';
 
-const DemoUploadFile = ({handleSubmitFile}) => {  
+const DemoUploadFile = ({onChangeFile}) => {  
     return (
-        <form onSubmit={handleSubmitFile}>
-            <input type="file" name="myFile" />
-            <input type="submit" />
-        </form>
+        <div>
+            <input id="inputFile" type="file" name="inputFile" onChange={onChangeFile} />
+        </div>
     );
 };
 
 DemoUploadFile.propTypes = {
-    handleSubmitFile: PropTypes.func
+    onChangeFile: PropTypes.func
 };
 
 export default DemoUploadFile;
