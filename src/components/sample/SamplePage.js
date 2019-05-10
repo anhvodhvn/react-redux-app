@@ -1,9 +1,11 @@
 import React, {PropTypes} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import axios from 'axios';
 
 import DemoProgressBar from './DemoProgressBar';
 import DemoDropdownMenu from './DemoDropdownMenu';
+import DemoUploadFile from './DemoUploadFile';
 import NavMultiLevel from '../common/NavMultiLevel';
 
 import Select from 'react-select';
@@ -47,6 +49,10 @@ class SamplePage extends React.Component {
         //console.log(selectedItem);
     }
     
+    handleSubmitFile(event, object) {
+        event.preventDefault();
+    }
+    
     render() {
         const { selectedOption, selectedItem } = this.state;
 
@@ -82,11 +88,8 @@ class SamplePage extends React.Component {
                 </div>
 
                 <div>
-                    <form>
-                        <h3>Upload File</h3>
-                        <input type="file" name="myFile" />
-                        <input type="submit" />
-                    </form>
+                    <h3>Demo Upload File</h3>
+                    <DemoUploadFile handleSubmitFile={this.handleSubmitFile} />
                 </div>
             </div>
         );
