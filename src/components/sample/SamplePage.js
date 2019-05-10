@@ -17,6 +17,8 @@ const list = [
 ];
 import DemoReactSelect from './DemoReactSelect';
 
+const AWS_SIGNURL = 'https://78n3id557f.execute-api.us-east-1.amazonaws.com/api/product/image/signurl';
+
 /* container components */
 class SamplePage extends React.Component {
     constructor(props, context){
@@ -71,21 +73,16 @@ class SamplePage extends React.Component {
         let fileName = selectedFile.name;
         let fileType = selectedFile.type;
         
-        axios.post("http://localhost:3001/sign_s3",{
+        axios.post(AWS_SIGNURL,{
             fileName : fileName,
             fileType : fileType
         })
         .then(response => {
-            let returnData = response.data.data.returnData;
+            let returnData = response.data.returnData;
             let signedRequest = returnData.signedRequest;
             let url = returnData.url;
             this.setState({ 
-                fileUpload: { 
-                    success: false,
-                    url: '',
-                    error: false,
-                    errorMessage: ''
-                }
+                fileUpload: { success: true, url: url }
             });
             
             //console.log("Recieved a signed request " + signedRequest);
@@ -98,9 +95,7 @@ class SamplePage extends React.Component {
             .then(result => {
                 //console.log("Response from s3:", result);
                 this.setState({
-                    fileUpload: {
-                        success: true
-                    }
+                    fileUpload: { success: true, url: url }
                 });
             })
             .catch(error => {
@@ -150,6 +145,7 @@ class SamplePage extends React.Component {
                     <div className="form-group">
                         <h3>Demo Upload File</h3>
                         <DemoUploadFile onChangeFile={this.onChangeFile}/>
+                        <h5>File on AWS: {this.state.fileUpload.url}</h5>
                     </div>
 
                     <div className="form-group">
