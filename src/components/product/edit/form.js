@@ -8,16 +8,16 @@ const FormProductEdit = ({ authors, category, handleSubmit, handleCancel, saving
     return (
         <form onSubmit={handleSubmit}>
             <h1>Manage Product</h1>
-            <Field name='title' component={InputText} label='Title' placeholder='Title' />
+            <Field name="title" component={InputText} label="Title" placeholder="Title" />
 
-            <Field name='author' component={InputSelect} options={authors} label='Author' placeholder='Select Author' />
+            <Field name="author" component={InputSelect} options={authors} label="Author" placeholder="Select Author" />
 
-            <Field name='category' component={InputSelect} options={category} label='Category' placeholder='Select Category' />
+            <Field name="category" component={InputSelect} options={category} label="Category" placeholder="Select Category" />
 
-            <Field name='length' component={InputText} label='Length' placeholder='Length' />
+            <Field name="length" component={InputText} label="Length" placeholder="Length" />
 
-            <button type='submit' disabled={saving} className='btn btn-primary'>Save</button>
-            <button type='button' disabled={saving} className='btn btn-danger' onClick={handleCancel}>Cancel</button>
+            <button type="submit" disabled={saving} className="btn btn-primary">Save</button>
+            <button type="button" disabled={saving} className="btn btn-danger" onClick={handleCancel}>Cancel</button>
         </form>
     );
 };
@@ -34,4 +34,4 @@ FormProductEdit.propTypes = {
 export default reduxForm({
     form: 'FormProductEdit',
     validate
-})(FormProductEdit) 
+})(FormProductEdit); 
