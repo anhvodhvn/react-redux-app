@@ -81,7 +81,7 @@ class SamplePage extends React.Component {
             let returnData = response.data.returnData;
             let signedRequest = returnData.signedRequest;
             let url = returnData.url;
-            this.setState({ 
+            this.setState({
                 fileUpload: { success: true, url: url }
             });
             

@@ -10,6 +10,7 @@ import ProductPage from './components/product/list/container';
 import EditProduct from './components/product/edit/container';
 
 import AboutPage from './components/about/AboutPage';
+import LoginPage from './components/login/LoginPage';
 import SamplePage from './components/sample/SamplePage';
 
 export default (
@@ -25,6 +26,7 @@ export default (
     <Route path="product/:id" component={EditProduct} />
     
     <Route path="about" component={AboutPage}/>
+    <Route path="login" component={LoginPage}/>
     <Route path="sample" component={SamplePage}/>
   </Route>
 );
