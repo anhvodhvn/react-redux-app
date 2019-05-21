@@ -13,6 +13,8 @@ const Header = ({loading}) => {
       {" | "}
       <Link to="/about" activeClassName="active">About</Link>
       {" | "}
+      <Link to="/login" activeClassName="active">Login</Link>
+      {" | "}
       <Link to="/sample" activeClassName="active">Sample</Link>
       {" | "}
     </nav>
