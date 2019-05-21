@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import LoginForm from './form';
 
 class LoginPage extends Component {
@@ -9,7 +8,6 @@ class LoginPage extends Component {
     }
 
     handleSubmit(values) {
-        debugger;
         console.log('- values:', values);
     }
 
