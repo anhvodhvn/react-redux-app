@@ -3,16 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 
 import validate from './validate';
 import asyncValidate from './asyncValidate';
-
-const renderField = ({ input, label, type, meta: { asyncValidating, touched, error } } ) => (
-    <div>
-        <label>{label}</label>
-        <div className={asyncValidating ? 'async-validating' : ''}>
-            <input {...input} type={type} placeholder={label} />
-            {touched && error && <span>{error}</span>}
-        </div>
-    </div>
-);
+import renderField from '../controls/renderField';
 
 const LoginForm = props => {
     const { handleSubmit, pristine, reset, submitting } = props;
@@ -29,12 +20,15 @@ const LoginForm = props => {
 };
 
 LoginForm.propTypes = {
-    handleSubmit: PropTypes.func
+    handleSubmit: PropTypes.func,
+    pristine: PropTypes.bool,
+    reset: PropTypes.bool,
+    submitting: PropTypes.bool
 };
 
 export default reduxForm({
     form: 'LoginForm',
     validate,
-    asyncValidate
-    // asyncBlurFields: ['username']
+    asyncValidate,
+    asyncBlurFields: ['username']
 })(LoginForm);
