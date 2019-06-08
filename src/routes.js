@@ -9,8 +9,9 @@ import EditCourse from './components/course/edit/container';
 import ProductPage from './components/product/list/container';
 import EditProduct from './components/product/edit/container';
 
-import BlogPage from './components/blogs/blog';
-import CommentPage from './components/blogs/comment';
+import BlogPage from './components/hoc/blog';
+import CommentPage from './components/hoc/comment';
+
 import AboutPage from './components/about/AboutPage';
 import LoginPage from './components/login/LoginPage';
 import SamplePage from './components/sample/SamplePage';
