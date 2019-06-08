@@ -13,7 +13,9 @@ const Header = ({loading}) => {
       {" | "}
       <Link to="/about" activeClassName="active">About</Link>
       {" | "}
-      <Link to="/login" activeClassName="active">Login</Link>
+      <Link to="/blogs" activeClassName="active">Blogs & Comments</Link>
+      {" | "}
+      <Link to="/login" activeClassName="active">Log In</Link>
       {" | "}
       <Link to="/sample" activeClassName="active">Sample</Link>
       {" | "}
