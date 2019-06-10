@@ -10,7 +10,7 @@ import ProductPage from './components/product/list/container';
 import EditProduct from './components/product/edit/container';
 
 import BlogPage from './components/hoc/blog';
-import CommentPage from './components/hoc/comment';
+import CounterPage from './components/counter';
 
 import AboutPage from './components/about/AboutPage';
 import LoginPage from './components/login/LoginPage';
@@ -28,8 +28,9 @@ export default (
     <Route path="product" component={EditProduct} />
     <Route path="product/:id" component={EditProduct} />
     
-    <Route path="blogs" component={BlogPage}/>
-    <Route path="comments" component={CommentPage}/>
+    <Route path="blog" component={BlogPage}/>
+    <Route path="counter" component={CounterPage}/>
+
     <Route path="about" component={AboutPage}/>
     <Route path="login" component={LoginPage}/>
     <Route path="sample" component={SamplePage}/>
