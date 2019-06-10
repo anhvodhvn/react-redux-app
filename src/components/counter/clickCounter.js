@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//import UpdatedComponent from './withCounter';
+import UpdatedComponent from './withCounter';
 
 const ClickCounter = ({ count, incrementCount }) => {
     return (
@@ -15,4 +15,4 @@ ClickCounter.propTypes = {
     incrementCount: PropTypes.func
 };
 
-export default ClickCounter;
+export default UpdatedComponent(ClickCounter);
