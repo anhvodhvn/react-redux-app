@@ -7,12 +7,12 @@ class Container extends React.Component {
         super(props);
 
         this.state = { count: 0 };
+        this.incrementCount = this.incrementCount.bind(this);
     }
 
     incrementCount() {
-        this.setState((prevState) => {
-            return { count: prevState.count+1 };
-        });
+        let {count} = this.state;
+        this.setState({count: count+1});
     }
 
     render() {
