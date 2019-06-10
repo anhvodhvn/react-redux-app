@@ -2,9 +2,10 @@
   "name": "react-redux-app",
   "version": "1.1.0",
   "author": "Anh Vo Duy",
+  "email": "voduyanh1984@yahoo.com",
   "license": "MIT",
   "engines": {
-    "node": "^8.11.1"
+    "node": "8.11.1"
   },
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
@@ -17,7 +18,7 @@
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
-    "axios": "0.18.0",
+    "axios": "0.18.1",
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3",
