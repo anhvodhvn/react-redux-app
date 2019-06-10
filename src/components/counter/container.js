@@ -11,8 +11,9 @@ class Container extends React.Component {
     }
 
     incrementCount() {
-        let { count } = this.state;
-        this.setState({ count: count+1 });
+        this.setState((prevState) => {
+            return { count: prevState.count+1 };
+        });
     }
 
     render() {
