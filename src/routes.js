@@ -9,9 +9,7 @@ import EditCourse from './components/course/edit/container';
 import ProductPage from './components/product/list/container';
 import EditProduct from './components/product/edit/container';
 
-import BlogPage from './components/hoc/blog';
 import CounterPage from './components/counter';
-
 import AboutPage from './components/about/AboutPage';
 import LoginPage from './components/login/LoginPage';
 import SamplePage from './components/sample/SamplePage';
@@ -28,9 +26,7 @@ export default (
     <Route path="product" component={EditProduct} />
     <Route path="product/:id" component={EditProduct} />
     
-    <Route path="blog" component={BlogPage}/>
     <Route path="counter" component={CounterPage}/>
-
     <Route path="about" component={AboutPage}/>
     <Route path="login" component={LoginPage}/>
     <Route path="sample" component={SamplePage}/>

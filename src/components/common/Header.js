@@ -12,8 +12,6 @@ const Header = () => {
       {" | "}
       <Link to="/about" activeClassName="active">About</Link>
       {" | "}
-      <Link to="/blog" activeClassName="active">Blogs</Link>
-      {" | "}
       <Link to="/counter" activeClassName="active">Counter</Link>
       {" | "}
       <Link to="/login" activeClassName="active">Log In</Link>
