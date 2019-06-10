@@ -5,9 +5,8 @@ import HoverCounter from './hoverCounter';
 class Container extends React.Component {
     constructor(props) {
         super(props);
-
+        
         this.state = { count: 0 };
-        this.incrementCount = this.incrementCount.bind(this);
     }
 
     incrementCount() {
