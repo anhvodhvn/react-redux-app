@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import UpdatedComponent from './withCounter';
 
-const HoverCounter = () => {
-    const { count, incrementCount } = this.props;
+const HoverCounter = ({ count, incrementCount }) => {
     return (
         <h2 onMouseOver={incrementCount}>
             Hovered: {count} times
@@ -16,4 +14,4 @@ HoverCounter.propTypes = {
     incrementCount: PropTypes.func
 };
 
-export default UpdatedComponent(HoverCounter);
+export default HoverCounter;
