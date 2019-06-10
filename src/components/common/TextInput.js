@@ -19,9 +19,9 @@ const TextInput = ({ input, name, label, placeholder, value, onChange, meta: {er
 };
 
 TextInput.propTypes = {
+  input: PropTypes.object,
   name: PropTypes.string,
   label: PropTypes.string,
-  onChange: PropTypes.func,
   placeholder: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func
