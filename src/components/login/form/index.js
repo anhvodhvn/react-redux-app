@@ -22,7 +22,7 @@ const LoginForm = props => {
 LoginForm.propTypes = {
     handleSubmit: PropTypes.func,
     pristine: PropTypes.bool,
-    reset: PropTypes.bool,
+    reset: PropTypes.func,
     submitting: PropTypes.bool
 };
 

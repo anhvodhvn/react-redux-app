@@ -27,7 +27,7 @@ InputDatePicker.propTypes = {
     showTime: PropTypes.bool,
     disabled: PropTypes.bool,
     classWrapper: PropTypes.string,
-    meta: PropTypes.object,
+    meta: PropTypes.object
 };
 
 export default InputDatePicker;

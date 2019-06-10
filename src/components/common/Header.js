@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link, IndexLink } from 'react-router';
 
-const Header = ({loading}) => {
+const Header = () => {
   return (
     <nav>
       <IndexLink to="/" activeClassName="active">Home</IndexLink>
@@ -13,16 +12,14 @@ const Header = ({loading}) => {
       {" | "}
       <Link to="/about" activeClassName="active">About</Link>
       {" | "}
-      <Link to="/login" activeClassName="active">Login</Link>
+      <Link to="/counter" activeClassName="active">Counter</Link>
+      {" | "}
+      <Link to="/login" activeClassName="active">Log In</Link>
       {" | "}
       <Link to="/sample" activeClassName="active">Sample</Link>
       {" | "}
     </nav>
   );
-};
-
-Header.propTypes = {
-  loading: PropTypes.bool
 };
 
 export default Header;

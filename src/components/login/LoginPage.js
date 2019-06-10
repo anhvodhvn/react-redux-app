@@ -4,11 +4,17 @@ import LoginForm from './form';
 class LoginPage extends Component {
     constructor(props, context) {
         super(props, context);
+
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     handleSubmit(values) {
-        console.log('- values:', values);
+        console.log('- submit:', values);
+    }
+
+    handleReset() {
+        console.log('- reset');
     }
 
     render() {
@@ -21,7 +27,7 @@ class LoginPage extends Component {
                     , <code>george</code> or <code>ringo</code>
                     .
                 </p>
-                <LoginForm onSubmit={this.handleSubmit} />
+                <LoginForm onSubmit={this.handleSubmit} reset={this.handleReset} />
             </div>
         );
     }
